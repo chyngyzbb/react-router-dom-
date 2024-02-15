@@ -49,3 +49,7 @@
   border: solid #40AB7E;
   cursor: pointer;
 }
+
+.active{
+  color: #40AB7E;
+}
