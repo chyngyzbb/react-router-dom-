@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../img/Rectangle.svg'
-import { NavLink, useNavigate} from "react-router-dom"
+import { Link, NavLink, useNavigate} from "react-router-dom"
 const Header = () => {
     const usenavigate=useNavigate()
     return (
@@ -8,7 +8,7 @@ const Header = () => {
             <div id="header">
                 <div className="container">
                     <div className="header">
-                        <img src={Logo} alt="img" />
+                        <Link to={'/'}><img src={Logo} alt="img" /></Link>
                         <div className="nav-bar">
                             <NavLink to={'/'}>Home</NavLink>
                             <NavLink to={'/toprated'}>TopRated</NavLink>

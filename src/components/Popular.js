@@ -7,10 +7,13 @@ const Popular = () => {
 
     const [popular,setPopular]=useState([])
     const getPopular=async()=>{
-        const res=await axios(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=en-US&page=1`)
+        try{
+            const res=await axios(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=en-US&page=1`)
         const data=await res.data
         setPopular(data.results)
-        
+        }catch(e){
+            console.log(e);
+        }
     }
 console.log(popular);
     useEffect(()=>{

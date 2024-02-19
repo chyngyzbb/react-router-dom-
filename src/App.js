@@ -20,7 +20,7 @@ function App() {
         <Route path='/toprated' element={<TopRated/>}/>
         <Route path='/recipes' element={<Recipes/>}/>
         <Route path='/popular' element={<Popular/>}/>
-        <Route path='/movies/detail-page/:id' element={<DetailPage/>}/>
+        <Route path='/movies/detail-page/:movieId' element={<DetailPage/>}/>
       </Routes>
      
       

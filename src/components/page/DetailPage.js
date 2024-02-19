@@ -2,26 +2,31 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { APIKEY } from '../../ApiKey';
+import Actors from '../Actors/Actors';
 
 const DetailPage = () => {
 
     const [detaile,setDetaile]=useState({})
-    const movie=useParams()
-    const detaiPage=async()=>{
-        const url=await axios(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${APIKEY}&language=en-US`)
+    const {movieId}=useParams()
+    const detaiPage=async(ID,apikey)=>{
+        try{
+            const url=await axios(`https://api.themoviedb.org/3/movie/${ID}?api_key=${apikey}&language=en-US`)
         const {data}=await url
         setDetaile(data)
+        }catch(e){
+            console.log(e);
+        }       
     }
 
-    
     console.log(detaile);
     useEffect(()=>{
-        detaiPage()
+        detaiPage(movieId,APIKEY)
     },[])
 
     const {title,poster_path,overview,runtime,vote_average}=detaile
     return (
-        <div id='detail'
+        <>
+          <div id='detail'
         style={{
             width:'100%',
             background:'grey',
@@ -43,6 +48,8 @@ const DetailPage = () => {
                     }
             </div>
         </div>
+        <Actors movieId={movieId}/>
+        </>
     );
 };
 
