@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { APIKEY } from '../ApiKey';
+import MoviesCard from './page/MoviesCard';
 
 const Popular = () => {
 
@@ -21,10 +22,7 @@ console.log(popular);
             <div className='container'>
                 <div className='movies'>
                     {popular.map((el)=>(
-                        <div>
-                            <img src={`https://media.themoviedb.org/t/p/w220_and_h330_face${el.poster_path}`}></img>
-                            <h4>{el.title}</h4>
-                        </div>
+                       <MoviesCard key={el.id} el={el}/> 
                     ))}
                 </div>
             </div>

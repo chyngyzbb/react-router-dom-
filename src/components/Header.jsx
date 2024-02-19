@@ -11,7 +11,7 @@ const Header = () => {
                         <img src={Logo} alt="img" />
                         <div className="nav-bar">
                             <NavLink to={'/'}>Home</NavLink>
-                            <NavLink to={'/about'}>About</NavLink>
+                            <NavLink to={'/toprated'}>TopRated</NavLink>
                             <NavLink to={'/recipes'}>Recipes</NavLink>
                             <NavLink to={'/popular'}>Popular</NavLink>
 

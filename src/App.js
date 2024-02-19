@@ -4,8 +4,9 @@ import {Routes, Route}from 'react-router-dom';
 import Header from './components/Header';
 import Recipes from './components/Recipes';
 import Home from './components/Home';
-import About from './components/About';
 import Popular from './components/Popular';
+import TopRated from './components/TopRated';
+import DetailPage from './components/page/DetailPage';
 
 
 
@@ -16,9 +17,10 @@ function App() {
    
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/about' element={<About/>}/>
+        <Route path='/toprated' element={<TopRated/>}/>
         <Route path='/recipes' element={<Recipes/>}/>
         <Route path='/popular' element={<Popular/>}/>
+        <Route path='/movies/detail-page/:id' element={<DetailPage/>}/>
       </Routes>
      
       
