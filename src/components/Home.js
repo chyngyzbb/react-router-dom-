@@ -21,7 +21,6 @@ const Home = () => {
             height:'550px',
         }}>
             <h1>{counter}</h1>
-            <h2>Hello world</h2>
            <button onClick={()=>setCounter(counter+1)}>++</button>
         </div>
     );
