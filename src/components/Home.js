@@ -20,6 +20,7 @@ const Home = () => {
             width:'100%',
             height:'550px',
         }}>
+            <h1>Hello</h1>
             <h1>{counter}</h1>
            <button onClick={()=>setCounter(counter+1)}>++</button>
         </div>
